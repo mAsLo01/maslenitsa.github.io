@@ -1,1 +1,42 @@
-Hello, World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Секретное слово</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #hiddenText {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Введите секретное слово</h2>
+    <input type="text" id="wordInput" placeholder="Введите слово">
+    <button onclick="checkWord()">Проверить</button>
+    <p id="hiddenText">Поздравляем! Вы ввели правильное слово!</p>
+
+    <script>
+        function checkWord() {
+            const correctWord = "пароль"; // Замени на своё слово
+            const userInput = document.getElementById("wordInput").value;
+            const hiddenText = document.getElementById("hiddenText");
+            
+            if (userInput.toLowerCase() === correctWord.toLowerCase()) {
+                hiddenText.style.display = "block";
+            } else {
+                hiddenText.style.display = "none";
+                alert("Неверное слово, попробуйте ещё раз!");
+            }
+        }
+    </script>
+</body>
+</html>
